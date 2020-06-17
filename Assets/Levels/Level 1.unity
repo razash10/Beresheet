@@ -249,6 +249,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.69
       objectReference: {fileID: 0}
+    - target: {fileID: 114146979949390776, guid: f0b89da5b5a260248991e6982cf39e1b,
+        type: 2}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0b89da5b5a260248991e6982cf39e1b, type: 2}
   m_IsPrefabParent: 0
@@ -598,6 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: 0, z: 10}
   period: 2
+  selfSpinSpeed: 0
 --- !u!108 &2036045371 stripped
 Light:
   m_PrefabParentObject: {fileID: 108457816046728120, guid: 372739ea4dd30ca408e0e12a4ffba2e6,

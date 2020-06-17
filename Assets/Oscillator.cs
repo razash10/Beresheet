@@ -8,6 +8,8 @@ public class Oscillator : MonoBehaviour
 {
     [SerializeField] Vector3 movementVector = new Vector3(10f,10f,10f);
     [SerializeField] float period = 2f;
+    [SerializeField] float selfSpinSpeed = 0f;
+    Vector3 selfSpinVector = Vector3.up;
 
     float movementFactor; // 0 for not moved, 1 for fully moved.
     Vector3 startingPos;
@@ -31,5 +33,6 @@ public class Oscillator : MonoBehaviour
         movementFactor = rawSinWave / 2f + 0.5f;
         Vector3 offset = movementFactor * movementVector;
         transform.position = startingPos + offset;
+        transform.Rotate(selfSpinVector * selfSpinSpeed * Time.deltaTime);
     }
 }

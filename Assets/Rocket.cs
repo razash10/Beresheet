@@ -14,6 +14,8 @@ public class Rocket : MonoBehaviour {
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem deathParticles;
 
+    [SerializeField] int level = 0;
+
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -68,17 +70,22 @@ public class Rocket : MonoBehaviour {
         audioSource.Stop();
         audioSource.PlayOneShot(death);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", levelLoadDelay); // parameterise time
+        Invoke("LoadCurrentLevel", levelLoadDelay); // parameterise time
     }
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        if(level < 9)
+        {
+            level += 1;
+        }
+        SceneManager.LoadScene(level);
+
     }
 
-    private void LoadFirstLevel()
+    private void LoadCurrentLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(level);
     }
 
     private void RespondToThrustInput()
