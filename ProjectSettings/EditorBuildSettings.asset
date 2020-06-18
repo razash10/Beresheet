@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Level 9.unity
     guid: a9a07f0328448ac4da57f8a57283dc1c
+  - enabled: 1
+    path: Assets/Levels/Winner.unity
+    guid: d7a4ee9d3f839b8429a0474eda1f8065

@@ -17,6 +17,7 @@ public class Rocket : MonoBehaviour {
 
     Rigidbody rigidBody;
     AudioSource audioSource;
+    int currentSceneIndex;
 
     bool useCollisions = true;
     bool isTransitioning = false;
@@ -25,7 +26,8 @@ public class Rocket : MonoBehaviour {
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-	}
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
 
     // Update is called once per frame
     void Update () {
@@ -95,18 +97,12 @@ public class Rocket : MonoBehaviour {
 
     private void LoadNextLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-        if (currentSceneIndex == (SceneManager.sceneCountInBuildSettings - 1))
-        {
-            nextSceneIndex = 0;
-        }
         SceneManager.LoadScene(nextSceneIndex);
     }
 
     private void LoadCurrentLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
