@@ -18,7 +18,6 @@ public class Rocket : MonoBehaviour {
     Rigidbody rigidBody;
     AudioSource audioSource;
     int currentSceneIndex;
-
     bool useCollisions = true;
     bool isTransitioning = false;
 
@@ -97,6 +96,7 @@ public class Rocket : MonoBehaviour {
 
     private void LoadNextLevel()
     {
+        Hint.hintTimeCount = 0;
         int nextSceneIndex = currentSceneIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
     }
@@ -114,7 +114,7 @@ public class Rocket : MonoBehaviour {
         }
         else
         {
-            audioSource.Pause();
+            audioSource.Stop();
             mainEngineParticles.Stop();
         }
     }
