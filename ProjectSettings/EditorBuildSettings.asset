@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/Splash.unity
+    guid: d7a4ee9d3f839b8429a0474eda1f8065
+  - enabled: 1
     path: Assets/Levels/Level 1.unity
     guid: c0da6f88ff1efa046aa7a00323e88c8d
   - enabled: 1
@@ -43,4 +46,4 @@ EditorBuildSettings:
     guid: a9a07f0328448ac4da57f8a57283dc1c
   - enabled: 1
     path: Assets/Levels/Winner.unity
-    guid: d7a4ee9d3f839b8429a0474eda1f8065
+    guid: c80c972c8ef14c74781318f270435907
