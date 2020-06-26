@@ -13,6 +13,7 @@ public class Oscillator : MonoBehaviour
 
     float movementFactor; // 0 for not moved, 1 for fully moved.
     Vector3 startingPos;
+    float timeCounter = 0f;
 
     // Use this for initialization
     void Start()
@@ -24,8 +25,8 @@ public class Oscillator : MonoBehaviour
     void Update()
     {
         if(period <= Mathf.Epsilon) { return; }
-
-        float cycles = Time.time / period; // grows continually from 0
+        timeCounter += Time.deltaTime;
+        float cycles = timeCounter / period; // grows continually from 0
 
         const float tau = Mathf.PI * 2f; // about 6.28
         float rawSinWave = Mathf.Sin(cycles * tau);
