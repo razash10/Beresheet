@@ -30,7 +30,6 @@ public class Timer : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space) && activeScene.Equals(splashScene))
         {
-            timerRender.enabled = true;
             timer = 0;
             SceneManager.LoadScene(1);
         }

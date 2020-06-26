@@ -21,7 +21,6 @@ public class Earth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (period <= Mathf.Epsilon) { return; }
-        float cycles = Time.time / period; // grows continually from 0
         transform.Rotate(selfSpinVector * selfSpinSpeed * Time.deltaTime);
     }
 }

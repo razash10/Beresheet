@@ -13,7 +13,6 @@ public class Winner : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Timer.timer = 0f;
-            Timer.timerRender.enabled = true;
             SceneManager.LoadScene(1);
         }
     }
