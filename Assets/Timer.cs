@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
@@ -40,8 +41,34 @@ public class Timer : MonoBehaviour {
             seconds = (int)Mathf.Abs(timer) % 60;
             minutes = (int)Mathf.Abs(timer) / 60;
             timerText = GetComponent<TextMesh>();
-            timerText.text = minutes + ":" + seconds;
+            DisplayText();
         }
 
+    }
+
+    private void DisplayText()
+    {
+        if(minutes % 10 == minutes)
+        {
+            if(seconds % 10 == seconds)
+            {
+                timerText.text = "0" + minutes + ":" + "0" + seconds;
+            }
+            else
+            {
+                timerText.text = "0" + minutes + ":" + seconds;
+            }
+        }
+        else
+        {
+            if (seconds % 10 == seconds)
+            {
+                timerText.text = minutes + ":" + "0" + seconds;
+            }
+            else
+            {
+                timerText.text = minutes + ":" + seconds;
+            }
+        }
     }
 }
