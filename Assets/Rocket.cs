@@ -40,6 +40,17 @@ public class Rocket : MonoBehaviour {
         {
             RespondToDebugKeys();
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Timer.timer = 0;
+            Hint.hintTimeCount = 0;
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    private void LoadFirstLevel()
+    {
+        throw new NotImplementedException();
     }
 
     private void RespondToDebugKeys()
@@ -49,7 +60,7 @@ public class Rocket : MonoBehaviour {
             LoadNextLevel();
         }
 
-        else if (Input.GetKeyDown(KeyCode.K))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             LoadCurrentLevel();
         }
