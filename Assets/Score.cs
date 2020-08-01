@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
-    TextMesh mesh;
+    //TextMesh mesh;
+    Text mesh = null;
     // Use this for initialization
     void Start () {
-        mesh = GetComponent<TextMesh>();
+        mesh = GetComponent<Text>();
         string score = "\n" + Timer.minutes + " minutes and " + Timer.seconds + " seconds";
-        mesh.text += score;
+        if (mesh) { mesh.text += score; }
+        
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

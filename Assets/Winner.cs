@@ -5,7 +5,7 @@ public class Winner : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-        Timer.timerRender.enabled = false;
+        Timer.timerText.enabled = false;
 	}
 	
 	// Update is called once per frame

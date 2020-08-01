@@ -26,7 +26,7 @@ public class Rocket : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        Timer.timerRender.enabled = true;
+        Timer.timerText.enabled = true;
     }
 
     // Update is called once per frame

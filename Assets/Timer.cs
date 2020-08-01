@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
     Scene splashScene;
@@ -8,20 +9,14 @@ public class Timer : MonoBehaviour {
     public static float timer;
     public static int minutes;
     public static int seconds;
-    TextMesh timerText;
-    public static MeshRenderer timerRender;
-    
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+
+    public static Text timerText;
 
     // Use this for initialization
     void Start () {
         splashScene = SceneManager.GetSceneByBuildIndex(0);
-        timerText = GetComponent<TextMesh>();
-        timerRender = GetComponent<MeshRenderer>();
-        timerRender.enabled = false;
+        timerText = GetComponent<Text>();
+        timerText.enabled = false;
         timer = 0f;
 	}
 	
@@ -32,15 +27,16 @@ public class Timer : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && activeScene.Equals(splashScene))
         {
             timer = 0;
+            WelcomeText.welcomeText.enabled = false;
             SceneManager.LoadScene(1);
         }
 
-        if (timerRender.enabled)
+        if (timerText.enabled)
         {
             timer += Time.deltaTime;
             seconds = (int)Mathf.Abs(timer) % 60;
             minutes = (int)Mathf.Abs(timer) / 60;
-            timerText = GetComponent<TextMesh>();
+            timerText = GetComponent<Text>();
             DisplayText();
         }
 
